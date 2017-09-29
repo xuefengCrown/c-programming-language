@@ -3,11 +3,23 @@
 int strindex(char s[], char t[]){
     int i, j, k;
     for(i = 0; s[i] != '\0'; i++){
-        for(j=i, k=0; t[k] != '\0' && s[j] == t[k]; j++, k++){
+        for(j=i, k=0; t[k] != '\0' && s[j] == t[k]; j++, k++)
             ;
-        }
         if(k > 0 && t[k] == '\0')
             return i;
     }
     return -1;
 }
+
+/* 进一步的，编写函数strrindex(s, t), 返回字符串 t 在s最右边的位置 */
+1 找到 t 后，不返回，记录下 i 继续搜索, pos = i
+
+2 从后向前查找
+for (i = strlen(s) - strlen(t); i >= 0; i--){
+    for(j=i, k=0; t[k] != '\0' && s[j] == t[k]; j++, k++)
+        ;
+    if(k > 0 && t[k] == '\0')
+        return i;
+    }
+}
+return -1;
