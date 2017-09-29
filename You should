@@ -1,0 +1,52 @@
+
+1 常量语义化
+# define 名字 替换文本
+
+2 添加注释
+#define LOWER 0 /* lower limit of table */
+#define UPPER 300 /* upper limit */
+#define STEP 20 /* step size */
+
+3
+单引号中的字符表示一个整型值
+'A' 65 (与特定字符集无关)
+
+4
+#define IN 1 /* inside a word */
+#define OUT 0 /* outside a word */
+
+int state = OUT;
+
+5 数字字符转为 数值
+c -'0'
+
+6 
+if 
+else if
+else
+
+7 函数声明
+int power(int, int);
+
+8 
+In C, all function arguments are passed "by value."
+
+9 数组名的值 是 数组首元素的地址
+
+10 尽量让函数在其他场合也有用
+
+11 字符数组拷贝
+while ((to[i] = from[i]) != '\0')
+  ++i;
+
+12 skip whitespace
+for (i = 0; isspace(s[i]); i++) /* skip white space */
+  ;
+
+
+
+
+
+
+
+
