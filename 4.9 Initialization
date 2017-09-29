@@ -1,0 +1,8 @@
+
+For external and static variables, the initializer must be a constant expression; the initialization
+is done once, conceptionally before the program begins execution. For automatic and register
+variables, the initializer is not restricted to being a constant: it may be any expression involving
+previously defined values, even function calls.
+
+
+
