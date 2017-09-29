@@ -1,0 +1,8 @@
+
+Another good example of recursion is quicksort, a sorting algorithm developed by C.A.R.
+Hoare in 1962. Given an array, one element is chosen and the others partitioned in two subsets
+- those less than the partition element and those greater than or equal to it. The same process is
+then applied recursively to the two subsets. When a subset has fewer than two elements, it
+doesn't need any sorting; this stops the recursion.
+
+
