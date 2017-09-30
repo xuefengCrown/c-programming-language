@@ -1,0 +1,14 @@
+
+5.6 Pointer Arrays; Pointers to Pointers
+
+Let us illustrate by writing a program that will sort a set of text lines into alphabetic order, a
+stripped-down version of the UNIX program  sort .
+
+我们在第3章写过一个能够对整数排序的shell sort，并在第4章使用quicksort改进了它。
+该算法在此同样有效，但是现在处理的是长度不一的文本行，而且不同于整数的是，它们不能在单个操作中比较和移动。
+我们需要一个能够高效，方便地处理变长文本行的数据表示法。
+In Chapter 3, we presented a Shell sort function that would sort an array of integers, and in
+Chapter 4 we improved on it with a quicksort. The same algorithms will work, except that now
+we have to deal with lines of text, which are of different lengths, and which, unlike integers,
+can't be compared or moved in a single operation. We need a data representation that will cope
+efficiently and conveniently with variable-length text lines.
