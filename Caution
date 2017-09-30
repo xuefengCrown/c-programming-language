@@ -1,0 +1,73 @@
+
+1 5.5 字符指针与函数
+char *pmessage;
+pmessage ="now is the time";
+
+C语言没有提供将整个字符串作为一个整体进行处理的运算符。
+
+There is an important difference between these definitions:
+char amessage[] = "now is the time"; /* an array */
+char *pmessage = "now is the time"; /* a pointer */
+
+amessage is an array, just big enough to hold the sequence of characters and '\0' that
+initializes it. Individual characters within the array may be changed but amessage will always
+refer to the same storage. On the other hand, pmessage is a pointer, initialized to point to a
+string constant; the pointer may subsequently be modified to point elsewhere, but the result is
+undefined if you try to modify the string contents.
+
+看下两个标准库函数的实现
+strcpy(s, t) 把指针t指向的字符串复制到指针s指向的位置。
+/* strcpy: copy t to s; array subscript version */
+void strcpy(char *s, char *t)
+{
+  int i;
+  i = 0;
+  while ((s[i] = t[i]) != '\0')
+    i++;
+}
+For contrast, here is a version of  strcpy with pointers:
+/* strcpy: copy t to s; pointer version */
+void strcpy(char *s, char *t)
+{
+  int i;
+  i = 0;
+  while ((*s = *t) != '\0') {
+    s++;
+    t++;
+  }
+}
+
+/* strcpy: copy t to s; pointer version 2 */
+void strcpy(char *s, char *t)
+{
+  while ((*s++ = *t++) != '\0')
+    ;
+}
+
+As the final abbreviation, observe that a comparison against '\0' is redundant, since the
+question is merely whether the expression is zero. So the function would likely be written as
+/* strcpy: copy t to s; pointer version 3 */
+void strcpy(char *s, char *t)
+{
+  while (*s++ = *t++)
+    ;
+}
+
+Exercise 5.3 字符串拼接
+#include <stdio.h>
+main(){
+    char s[] = "hello,";
+    char t[] = "world!";
+    strcat(s, t);
+    printf("%s", s);
+}
+void strcat(char *s, char *t){
+    for(; *s; s++)
+        ;
+    for(; *s++ = *t++;)
+        ;
+}
+
+
+
+
