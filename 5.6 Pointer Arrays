@@ -12,3 +12,14 @@ Chapter 4 we improved on it with a quicksort. The same algorithms will work, exc
 we have to deal with lines of text, which are of different lengths, and which, unlike integers,
 can't be compared or moved in a single operation. We need a data representation that will cope
 efficiently and conveniently with variable-length text lines.
+
+This eliminates the twin problems of complicated storage management and high overhead that
+would go with moving the lines themselves.
+The sorting process has three steps:
+---read all the lines of input
+---sort them
+---print them in order
+As usual, it's best to divide the program into functions that match this natural division, with the
+main routine controlling the other functions. Let us defer the sorting step for a moment, and
+concentrate on the data structure and the input and output.
+
