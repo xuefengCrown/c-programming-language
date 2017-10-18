@@ -1,0 +1,25 @@
+# 字符串反转
+n++ 导致的一个bug
+
+--------------------------------------
+#include <stdio.h>
+
+main(){
+    char s[] = "program";
+    reverse(s, 0, strlen(s)-1);
+    printf("%s\n", s);
+}
+
+void reverse(char *s, int low, int high){
+    if(high>=low){
+        swap(s, low, high);
+        reverse(s, low+1, high-1);// reverse(s, low++, high--); 有问题low++ 的值是low，而之后的++操作施加作用的low是局部变量
+        //改为 ++low 即可
+    }
+}
+void swap(char *s, int a, int b){
+    int t = s[a];
+    s[a] = s[b];
+    s[b] = t;
+}
+--------------------------------------
